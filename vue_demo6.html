@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VUE Demo</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    </head>
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Vue Demo 6 - Mouseover/Mouseout Events</title>
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+   <div id="databinding">
+      <div 
+         v-bind:style="styleobj" 
+         v-on:mouseover="changebgcolor" 
+         v-on:mouseout="originalcolor"
+         style="width:200px;height:100px;text-align:center;line-height:100px;cursor:pointer;">
+         Hover over me!
+      </div>
+   </div>
+   <script>
+      new Vue({
+         el: '#databinding',
+         data: {
+            styleobj: {
+               backgroundColor: 'lightblue',
+               color: 'black',
+               border: '1px solid #333'
+            }
+         },
+         methods: {
+            changebgcolor: function() {
+               this.styleobj.backgroundColor = 'orange';
+               this.styleobj.color = 'white';
+            },
+            originalcolor: function() {
+               this.styleobj.backgroundColor = 'lightblue';
+               this.styleobj.color = 'black';
+            }
+         }
+      });
+   </script>
+</body>
+</html>
